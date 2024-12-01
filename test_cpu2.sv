@@ -48,6 +48,9 @@ end
 initial 
 begin 
 switches = 3;
+#190ns switches = 5;
+#180ns switches = 2;
+#180ns switches = 32;
 end
 
 
