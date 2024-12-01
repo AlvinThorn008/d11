@@ -80,6 +80,11 @@ buffer #(.WORD_W(WORD_W), .OP_W(OP_W)) buf0 (.*);
 
 
 //This line needs to be modified
-always_comb Rdata = Mdata;
+always_comb begin
+  if (Daddress == (2**(WORD_W-OP_W) - 1))
+    Rdata = Sdata
+  else
+    Rdata = Mdata;
+end
     
 endmodule
