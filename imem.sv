@@ -34,8 +34,8 @@ always_comb
   Idata = 0;
   case (Iaddress)
     0: Idata = {`STORE, 5'd30}; //Store the contents of data register
-    1: Idata = {`LOAD, 5'd30};  //Load the contents of address into the data register
-    2: Idata = {`ADD, 5'd31};    //Add the value of the operand to the data register
+    1: Idata = {`LOAD, 5'd31};  //Load the contents of address into the data register
+    2: Idata = {`ADD, 5'd31};
     3: Idata = {`STORE, 5'd30}; //Store the contents of data register
     4: Idata = {`BNE, 5'd1};    //Branch if result of last arithmetic operation is not zero
     default: Idata = 0;         //rest of ROM is 0

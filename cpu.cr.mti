@@ -64,12 +64,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	test_cpu2
 
-} {} {}} {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/ir.sv} {1 {vlog -work work -sv -stats=none {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/ir.sv}
+} {} {}} {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/cpu2.sv} {1 {vlog -work work -sv -stats=none {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/cpu2.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ir
+-- Compiling module cpu2
 
 Top level modules:
-	ir
+	cpu2
 
 } {} {}} {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/pc.sv} {1 {vlog -work work -sv -stats=none {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/pc.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -77,5 +77,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	pc
+
+} {} {}} {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/ir.sv} {1 {vlog -work work -sv -stats=none {C:/Users/dubem/Documents/Docs/Uni/EEE/EEE/Digital Systems 1313/projects/d11/ir.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ir
+
+Top level modules:
+	ir
 
 } {} {}}

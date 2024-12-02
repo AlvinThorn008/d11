@@ -22,7 +22,7 @@ module decoder #(parameter OP_W = 3)
                   (input logic clock, n_reset, z_flag,
                    input logic [OP_W-1:0] op,
                    output logic load_REG, load_PC, load_IR,  ALU_REG, 
-                                ALU_add, ALU_sub, INC_PC, WE, IMM);
+                                ALU_add, ALU_sub, ALU_xor, INC_PC, WE, IMM);
 
 `include "opcodes.svh"
 
@@ -45,6 +45,7 @@ always_comb
   ALU_REG = 1'b0;
   ALU_add = 1'b0;
   ALU_sub = 1'b0;
+  ALU_xor = 1'b0;
   INC_PC = 1'b0;
   load_PC = 1'b0;
   WE = 1'b0;
@@ -84,6 +85,11 @@ always_comb
                      load_REG = 1'b1;
                      ALU_REG = 1'b1;
                      ALU_add = 1'b1;
+                     end
+             `XOR:   begin
+                     load_REG = 1'b1;
+                     ALU_REG = 1'b1;
+                     ALU_xor = 1'b1;
                      end    
              default:; 
              endcase
