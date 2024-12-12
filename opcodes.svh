@@ -25,5 +25,6 @@
 `define ADD 3'b010
 `define SUB 3'b011
 `define BNE 3'b100
-`define ADDI 3'b101
+`define LOADI 3'b101
 `define XOR 3'b110
+`define LOADR 3'b111

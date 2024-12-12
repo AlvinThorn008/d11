@@ -23,12 +23,12 @@
 //            : Version 2.0 14/06/24 Rewritten to remove tristate bus
 /////////////////////////////////////////////////////////////////////
 
-module cpu2 #(parameter WORD_W = 8, OP_W = 3)
+module cpu3 #(parameter WORD_W = 8, OP_W = 3)
              (input logic clock, n_reset,
               input logic [WORD_W-1:0] switches,
               output logic [6:0] disp0, disp1);
 
-logic load_REG,  load_IR, ALU_REG, ALU_add, ALU_sub, ALU_xor, INC_PC, load_PC, WE, IMM, z_flag;
+logic load_REG,  load_IR, ALU_REG, ALU_add, ALU_sub, ALU_xor, INC_PC, load_PC, WE, IMM, z_flag, IND;
 
 logic [OP_W-1:0] op;
 
@@ -45,16 +45,21 @@ logic [WORD_W-1:0] Mdata;
 logic [WORD_W-1:0] digits;
 
 
+always_comb begin
+  if (IND)
+    Daddress = Wdata;
+  else
+    Daddress = operand;
+end
 
-always_comb
-  begin
+always_comb begin
   branchaddr = operand;
-  Daddress = operand;
+  
   if (IMM) 
     Adata = {{OP_W{1'b0}},operand};
   else 
     Adata = Rdata;
-  end
+end
 
 
     

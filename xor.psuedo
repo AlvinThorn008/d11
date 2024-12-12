@@ -1,0 +1,26 @@
+
+
+// source
+addr = 8;
+
+key = ???;
+
+REG;
+
+loop {
+    REG = *addr ^ key;
+    addr -= 1;
+    if (addr != 0) break;
+}
+
+// ASM #1
+
+LOAD 31 // 31 should be 8
+STORE 20 // write 8 to 20(addr)
+// REG = 8
+LOADR // REG = MEM[8]
+XOR 31
+
+
+
+

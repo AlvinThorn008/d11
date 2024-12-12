@@ -28,7 +28,7 @@ module cpu2 #(parameter WORD_W = 8, OP_W = 3)
               input logic [WORD_W-1:0] switches,
               output logic [6:0] disp0, disp1);
 
-logic load_REG,  load_IR, ALU_REG, ALU_add, ALU_sub, ALU_xor, INC_PC, load_PC, WE, IMM, z_flag;
+logic load_REG,  load_IR, ALU_REG, ALU_add, ALU_sub, ALU_xor, INC_PC, load_PC, WE, IMM, z_flag, IND;
 
 logic [OP_W-1:0] op;
 
@@ -54,10 +54,7 @@ always_comb
     Adata = {{OP_W{1'b0}},operand};
   else 
     Adata = Rdata;
-  end
-
-
-    
+  end 
 
 pc #(.WORD_W(WORD_W), .OP_W(OP_W)) pc0 (.*);
 

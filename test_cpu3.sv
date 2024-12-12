@@ -22,7 +22,7 @@
 //            : Version 1.5 26/11/24 Consistent naming
 /////////////////////////////////////////////////////////////////////
 
-module test_cpu2;
+module test_cpu3;
 
 parameter int WORD_W = 8, OP_W = 3;
 
@@ -30,7 +30,7 @@ logic  clock, n_reset;
 logic [6:0] disp0, disp1;
 logic [WORD_W-1:0] switches;
 
-cpu2 #(.WORD_W(WORD_W), .OP_W(OP_W)) c1 (.*);
+cpu3 #(.WORD_W(WORD_W), .OP_W(OP_W)) c1 (.*);
 
 always
   begin
@@ -47,7 +47,11 @@ end
 
 initial 
 begin 
-switches = 2;
+switches = 5;
+#70ns switches = 3;
+// #190ns switches = 5;
+// #180ns switches = 2;
+// #180ns switches = 32;
 end
 
 
